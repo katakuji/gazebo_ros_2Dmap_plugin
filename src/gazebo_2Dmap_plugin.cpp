@@ -245,7 +245,7 @@ bool OccupancyMapFromWorld::cell2index(int cell_x, int cell_y,
 {
   if(cell_x >= 0 && cell_x < cell_size_x && cell_y >= 0 && cell_y < cell_size_y)
   {
-    map_index = cell_y * cell_size_y + cell_x;
+    map_index = cell_y * cell_size_x + cell_x;
     return true;
   }
   else
@@ -259,7 +259,7 @@ bool OccupancyMapFromWorld::index2cell(int index, unsigned int cell_size_x,
                                        unsigned int cell_size_y,
                                        unsigned int& cell_x, unsigned int& cell_y)
 {
-  cell_y = index / cell_size_y;
+  cell_y = index / cell_size_x;
   cell_x = index % cell_size_x;
 
   if(cell_x >= 0 && cell_x < cell_size_x && cell_y >= 0 && cell_y < cell_size_y)
